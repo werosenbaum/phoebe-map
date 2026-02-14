@@ -1,0 +1,52 @@
+[
+  {
+    "id": "london",
+    "title": "London",
+    "meta": "Add date / place detail later",
+    "lat": 51.5074,
+    "lng": -0.1278,
+    "caption": "Write 1–4 sentences here.\nExample: The first time we felt like we were living in a movie.",
+    "tags": ["Trip"],
+    "photos": []
+  },
+  {
+    "id": "cannes",
+    "title": "Cannes",
+    "meta": "Add date / place detail later",
+    "lat": 43.5528,
+    "lng": 7.0174,
+    "caption": "Write 1–4 sentences here.\nExample: Sun, sea, and the easiest kind of happiness.",
+    "tags": ["Trip", "Beach"],
+    "photos": []
+  },
+  {
+    "id": "nantucket",
+    "title": "Nantucket",
+    "meta": "Add date / place detail later",
+    "lat": 41.2835,
+    "lng": -70.0995,
+    "caption": "Write 1–4 sentences here.\nExample: Long walks, salty air, and doing nothing together.",
+    "tags": ["Cozy", "Beach"],
+    "photos": []
+  },
+  {
+    "id": "philadelphia",
+    "title": "Philadelphia",
+    "meta": "Add date / place detail later",
+    "lat": 39.9526,
+    "lng": -75.1652,
+    "caption": "Write 1–4 sentences here.\nExample: Where so many of my favorite memories started.",
+    "tags": ["Home"],
+    "photos": []
+  },
+  {
+    "id": "chicago",
+    "title": "Chicago",
+    "meta": "Add date / place detail later",
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "caption": "Write 1–4 sentences here.\nExample: Our everyday city — the place that became 'us.'",
+    "tags": ["Home", "Everyday"],
+    "photos": []
+  }
+]

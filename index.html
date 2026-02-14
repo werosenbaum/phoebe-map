@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Will + Phoebe — Map&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Leaflet (map library) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rel="stylesheet"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="</p>
+<p class="p1"><span class="Apple-converted-space">    </span>crossorigin=""</p>
+<p class="p1"><span class="Apple-converted-space">  </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script</p>
+<p class="p1"><span class="Apple-converted-space">    </span>src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="</p>
+<p class="p1"><span class="Apple-converted-space">    </span>crossorigin=""</p>
+<p class="p1"><span class="Apple-converted-space">    </span>defer</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="./styles.css" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="./app.js" defer&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Password gate (soft protection) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="gate" class="gate hidden" role="dialog" aria-modal="true"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="gate-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gate-title"&gt;Will + Phoebe&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gate-subtitle"&gt;Enter the passphrase&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="gateInput" class="gate-input" type="password" placeholder="Passphrase" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="gateBtn" class="gate-btn"&gt;Unlock&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="gateError" class="gate-error" aria-live="polite"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="gate-note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>(This is a light privacy layer for a shared link.)</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="topbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="brand"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand-title"&gt;Will + Phoebe&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand-subtitle"&gt;Everywhere we’ve been&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="controls"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="prevBtn" class="pill" type="button"&gt;← Prev&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="nextBtn" class="pill" type="button"&gt;Next →&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="shell"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="map" class="map"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Bottom sheet / side card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="sheet" class="sheet" aria-live="polite"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sheet-handle"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sheet-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="sheet-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="memTitle" class="mem-title"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="memMeta" class="mem-meta"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="memTags" class="mem-tags"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="photoWrap" class="photo-wrap hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="photoPrev" class="photo-nav" type="button"&gt;‹&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;img id="photoImg" class="photo" alt="Memory photo" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="photoNext" class="photo-nav" type="button"&gt;›&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="memCaption" class="mem-caption"&gt;—&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
